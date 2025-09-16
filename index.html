@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Lakes Mussels Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <h1 class="title">
+                    <i class="fas fa-water"></i>
+                    Great Lakes Mussels Explorer
+                </h1>
+                <p class="subtitle">Discover the fascinating world of freshwater mussels in the Great Lakes region</p>
+            </div>
+        </header>
+
+        <!-- Search and Filter Bar -->
+        <div class="search-section">
+            <div class="container">
+                <div class="search-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search mussels by name, species, or characteristics...">
+                        <button id="clearSearch" class="clear-btn" title="Clear search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="filter-controls">
+                        <select id="basinFilter" class="filter-select">
+                            <option value="">All Basins</option>
+                        </select>
+                        <select id="hostCountFilter" class="filter-select">
+                            <option value="">All Host Counts</option>
+                            <option value="1-5">1-5 hosts</option>
+                            <option value="6-15">6-15 hosts</option>
+                            <option value="16-25">16-25 hosts</option>
+                            <option value="26+">26+ hosts</option>
+                        </select>
+                        <button id="resetFilters" class="reset-btn">
+                            <i class="fas fa-undo"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+                <div class="stats">
+                    <span id="musselCount">Loading...</span>
+                    <span class="divider">•</span>
+                    <span id="imageCount">Loading images...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Loading State -->
+                <div id="loadingState" class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading mussel data...</p>
+                </div>
+
+                <!-- Grid -->
+                <div id="musselGrid" class="mussel-grid">
+                    <!-- Mussel cards will be dynamically inserted here -->
+                </div>
+
+                <!-- No Results -->
+                <div id="noResults" class="no-results" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No mussels found</h3>
+                    <p>Try adjusting your search terms or filters</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal -->
+        <div id="musselModal" class="modal" style="display: none;">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle" class="modal-title"></h2>
+                    <button id="closeModal" class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-content-wrapper">
+                        <!-- Images Section -->
+                        <div class="images-section">
+                            <div id="imageCarousel" class="image-carousel">
+                                <!-- Images will be dynamically inserted here -->
+                            </div>
+                            <div class="image-controls">
+                                <button id="prevImage" class="carousel-btn" disabled>
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <span id="imageCounter" class="image-counter">1 / 1</span>
+                                <button id="nextImage" class="carousel-btn" disabled>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Details Section -->
+                        <div class="details-section">
+                            <div class="details-tabs">
+                                <button class="tab-btn active" data-tab="overview">Overview</button>
+                                <button class="tab-btn" data-tab="characteristics">Characteristics</button>
+                                <button class="tab-btn" data-tab="hosts">Host Fish</button>
+                                <button class="tab-btn" data-tab="identification">Identification</button>
+                            </div>
+
+                            <div class="tab-content">
+                                <!-- Overview Tab -->
+                                <div id="overview" class="tab-panel active">
+                                    <div class="info-grid">
+                                        <div class="info-item">
+                                            <label>Scientific Name</label>
+                                            <span id="modalSpecies" class="scientific-name"></span>
+                                        </div>
+                                        <div class="info-item">
+                                            <label>Basin</label>
+                                            <span id="modalBasin"></span>
+                                        </div>
+                                        <div class="info-item">
+                                            <label>Host Fish Count</label>
+                                            <span id="modalHostCount"></span>
+                                        </div>
+                                        <div class="info-item">
+                                            <label>Most Common Host</label>
+                                            <span id="modalCommonHost"></span>
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <h4>Description</h4>
+                                        <p id="modalDescription"></p>
+                                    </div>
+                                </div>
+
+                                <!-- Characteristics Tab -->
+                                <div id="characteristics" class="tab-panel">
+                                    <div class="characteristics-grid">
+                                        <div class="char-item" id="shellChar">
+                                            <h4>Shell</h4>
+                                            <p id="shellDescription"></p>
+                                        </div>
+                                        <div class="char-item" id="nacreChar">
+                                            <h4>Nacre</h4>
+                                            <p id="nacreDescription"></p>
+                                        </div>
+                                        <div class="char-item" id="periostracumChar">
+                                            <h4>Periostracum</h4>
+                                            <p id="periostracumDescription"></p>
+                                        </div>
+                                        <div class="char-item" id="otherChar">
+                                            <h4>Other Characteristics</h4>
+                                            <p id="otherCharacteristics"></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Host Fish Tab -->
+                                <div id="hosts" class="tab-panel">
+                                    <div class="host-info">
+                                        <div class="host-summary">
+                                            <h4>Host Fish Summary</h4>
+                                            <p>This mussel species has been reported to use <strong id="hostCountSummary"></strong> different fish species as hosts for its larval development.</p>
+                                        </div>
+                                        <div class="host-list">
+                                            <h4>All Reported Host Fish</h4>
+                                            <div id="hostList" class="host-tags"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Identification Tab -->
+                                <div id="identification" class="tab-panel">
+                                    <div class="identification-content">
+                                        <div class="confusion-section">
+                                            <h4>May be confused with</h4>
+                                            <p id="confusionText"></p>
+                                        </div>
+                                        <div class="credit-section">
+                                            <h4>Image Credit</h4>
+                                            <p id="imageCredit"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
