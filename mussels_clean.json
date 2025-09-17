@@ -39,8 +39,8 @@
     "wing": "",
     "other": "Nodules absent",
     "images": [
-      "threeridge 2.webp",
-      "threeridge 1.webp"
+      "threeridge 1.webp",
+      "threeridge 2.webp"
     ]
   },
   {
@@ -83,8 +83,8 @@
     "wing": "No wing present on hinge line",
     "other": "",
     "images": [
-      "Spike 3.webp",
-      "Spike 1.webp"
+      "Spike 1.webp",
+      "Spike 3.webp"
     ]
   },
   {
@@ -105,8 +105,8 @@
     "wing": "",
     "other": "",
     "images": [
-      "wabash pigtoe 2.webp",
-      "wabash pigtoe 1.webp"
+      "wabash pigtoe 1.webp",
+      "wabash pigtoe 2.webp"
     ]
   },
   {
@@ -127,8 +127,8 @@
     "wing": "",
     "other": "",
     "images": [
-      "plain pocketbook 2.webp",
-      "plain pocketbook 1.webp"
+      "plain pocketbook 1.webp",
+      "plain pocketbook 2.webp"
     ]
   },
   {
@@ -149,8 +149,8 @@
     "wing": "",
     "other": "",
     "images": [
-      "fatmucket 1.webp",
-      "fatmucket 2.webp"
+      "fatmucket 2.webp",
+      "fatmucket 1.webp"
     ]
   },
   {
@@ -192,7 +192,10 @@
     "other_characteristics": "Interdental tooth present, lateral teeth absent, interdental tooth broad",
     "wing": "",
     "other": "",
-    "images": []
+    "images": [
+      "fluttedshell 1.webp",
+      "fluttedshell 2.webp"
+    ]
   },
   {
     "id": 11,
@@ -212,8 +215,8 @@
     "wing": "Posterior and anterior wing, Anterior wing rarely apparent, broken off",
     "other": "Posterior end of shell not truncated",
     "images": [
-      "fragile papershell 1.webp",
-      "fragile papershell 2.webp"
+      "fragile papershell 2.webp",
+      "fragile papershell 1.webp"
     ]
   },
   {
@@ -234,10 +237,10 @@
     "wing": "",
     "other": "",
     "images": [
-      "Eastern Pondmussel 4.webp",
+      "Eastern Pondmussel.webp",
       "Eastern Pondmussel 2.webp",
       "Eastern Pondmussel 3.webp",
-      "Eastern Pondmussel.webp"
+      "Eastern Pondmussel 4.webp"
     ]
   },
   {
@@ -258,8 +261,8 @@
     "wing": "",
     "other": "",
     "images": [
-      "black sandshell 1.webp",
-      "black sandshell 2.webp"
+      "black sandshell 2.webp",
+      "black sandshell 1.webp"
     ]
   },
   {
@@ -280,8 +283,8 @@
     "wing": "No wing present on hinge line",
     "other": "White foot",
     "images": [
-      "round pigtoe 1.webp",
-      "round pigtoe 2.webp"
+      "round pigtoe 2.webp",
+      "round pigtoe 1.webp"
     ]
   },
   {
@@ -346,8 +349,8 @@
     "wing": "",
     "other": "",
     "images": [
-      "giant floater 1.webp",
-      "giant floater 2.webp"
+      "giant floater 2.webp",
+      "giant floater 1.webp"
     ]
   },
   {
@@ -368,8 +371,8 @@
     "wing": "No posterior wing.",
     "other": "",
     "images": [
-      "pimpleback 2.webp",
-      "pimpleback 1.webp"
+      "pimpleback 1.webp",
+      "pimpleback 2.webp"
     ]
   },
   {
@@ -434,8 +437,8 @@
     "wing": "",
     "other": "",
     "images": [
-      "deertoe 2.webp",
-      "deertoe.webp"
+      "deertoe.webp",
+      "deertoe 2.webp"
     ]
   },
   {
@@ -478,8 +481,32 @@
     "wing": "",
     "other": "",
     "images": [
-      "Paper Pondshell inside.webp",
-      "Paper Pondshell .webp"
+      "Paper Pondshell .webp",
+      "Paper Pondshell inside.webp"
+    ]
+  },
+  {
+    "id": 25,
+    "common_name": "Snuffbox",
+    "species": "Epioblasma triquetra",
+    "basin": "Lake Erie (Presque Isle Bay), Conneaut Creek",
+    "host_fish_count": 1,
+    "most_common_host": "Logperch (Percina caprodes)",
+    "defining_characteristics": "1. Small to medium-sized mussel with triangular shape;\n2. Yellow or yellowish-green shell with dark green rays and chevron markings;\n3. Males larger than females (up to 2.8 inches vs 1.8 inches);\n4. Distinct sexual dimorphism in shell shape.",
+    "maybe_confused": "Other small triangular mussels, but distinguished by distinctive chevron markings and sexual dimorphism.",
+    "reported_hosts": "Logperch (Percina caprodes)",
+    "image_credit": "Image (credit, K. Little): Illinois State Museum, ISM# (external and internal)",
+    "shell_description": "Small to medium-sized, triangular-shaped shell with yellow or yellowish-green color",
+    "nacre": "white",
+    "periostracum": "Yellow or yellowish-green with dark green rays and chevron markings",
+    "other_characteristics": "Distinct sexual dimorphism - males larger and more elongated than females",
+    "wing": "",
+    "other": "Endangered species - sensitive to pollution and habitat degradation",
+    "images": [
+      "Snuffbox female.webp",
+      "Snuffbox male.webp",
+      "Snuffbox f intertior.webp",
+      "Snuffbox m interior.webp"
     ]
   }
 ]
